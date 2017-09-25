@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+    <title>New Title Doc</title>
+    <style>
+        .star  {
+            width: 15px;
+            height: 15px;
+
+        }
+    </style>
+</head>
+<body>
+<img src="star.png" class="star" alt="">
+<h1>Employ (Non man)</h1>
+<table>
+    <xsl:for-each
+            select="/employees/employee/staff/employee[county= 'Manhattan']">
+        <tr>
+            <td>
+                <xls:value-of select="./name"/>
+            </td>
+            <td>
+                <xls:value-of select="./county"/>
+            </td>
+            <td>
+                <xls:value-of select="./jobCategory/salary"/>
+            </td>
+        </tr>
+    </xsl:for-each>
+</table>
+</body>
+</html>
